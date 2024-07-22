@@ -24,7 +24,13 @@ public class SecurityFilterConfig {
                 new LoginUrlAuthenticationEntryPoint("/login")
         ))
                 .oauth2ResourceServer(conf -> conf.jwt(withDefaults()));
+        return http.build();
+    }
 
+    @Bean
+    SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
+        http.authorizeHttpRequests(authorize -> authorize.anyRequest().authenticated())
+                .formLogin(withDefaults());
         return http.build();
     }
 }
