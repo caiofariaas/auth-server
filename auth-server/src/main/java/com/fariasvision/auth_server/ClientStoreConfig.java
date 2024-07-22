@@ -25,7 +25,7 @@ public class ClientStoreConfig {
                 .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
                 .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
                 .authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
-                .redirectUri("http://localhost:8080/login/oauth2/code/client-server")
+                .redirectUri("http://localhost:8083/login/oauth2/code/client-server-oidc")
                 .scope(OidcScopes.OPENID)
                 .scope(OidcScopes.PROFILE)
                 .clientSettings(ClientSettings
